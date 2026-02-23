@@ -19,35 +19,17 @@ Hlavní předností modelu je **dynamická cenotvorba**, která vypočítává c
 Projekt je rozdělen do logických celků pro snadnou orientaci:
 
 - **`/doc`**: Dokumentace projektu.
-- `analysis.md`: Původní byznys analýza a požadavky.
-- `dictionary.md`: Podrobný technický popis tabulek a atributů.
+- [analysis.md](doc/analysis.md): Původní byznys analýza a požadavky.
+- [dictionary.md](doc/dictionary.md): Podrobný technický popis tabulek a atributů.
+- [tables.md](doc/tables.md): Tabulky databáze.
+- [er-schema.md](doc/er-schema.md): E-R schéma databáze.
 
 - **`/database`**: SQL skripty a modely.
-- `model/cinema.mwb`: Zdrojový soubor pro MySQL Workbench.
-- `scripts/01-schema.sql`: Skript pro vytvoření struktury databáze.
-- `scripts/02-data.sql`: Ukázková data pro testování (WIP).
+- [model/cinema.mwb](database/model/cinema.mwb): Zdrojový soubor pro MySQL Workbench.
+- [scripts/01-schema.sql](database/scripts/01-schema.sql): Skript pro vytvoření struktury databáze.
+- [scripts/02-data.sql](database/scripts/02-data.sql): Ukázková data pro testování (WIP).
 
 - **`/examples`**: Praktické ukázky SQL dotazů (SELECTy, reporty).
-
----
-
-## Instalace a zprovoznění
-
-Pro zprovoznění databáze na vašem lokálním stroji postupujte následovně:
-
-1. **Klonování repozitáře:**
-
-```bash
-git clone https://github.com/bubilem/cinema.git
-
-```
-
-2. **Vytvoření schématu:**
-   Otevřete MySQL Workbench (nebo jiný nástroj) a spusťte skript:
-   `database/scripts/01-schema.sql`
-3. **Import dat:**
-   Pro naplnění databáze testovacími daty spusťte:
-   `database/scripts/02-data.sql`(WIP)
 
 ---
 

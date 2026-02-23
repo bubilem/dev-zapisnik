@@ -8,10 +8,12 @@ export default defineConfig({
   themeConfig: {
     // Navigace nahoře
     nav: [
-      { text: 'Domů', link: '/' },
-      { text: 'Webové technologie', link: '/webove-technologie/' },
-      { text: 'Programování', link: '/programovani/' },
-      { text: 'Databáze', link: '/databaze/' }
+      { text: 'Úvod', link: '/README' },
+      { text: 'KM', link: '/kriticke-mysleni/README' },
+      { text: 'WEB', link: '/webove-technologie/README' },
+      { text: 'PRG', link: '/programovani/README' },
+      { text: 'DAT', link: '/databaze/README' },
+      { text: 'MD', link: '/markdown/README' }
     ],
 
     // Levé postranní menu pro jednotlivé sekce
@@ -20,40 +22,50 @@ export default defineConfig({
         {
           text: 'Webové technologie',
           items: [
-            { text: 'Rozcestník', link: '/webove-technologie/' },
+            { text: 'Rozcestník', link: '/webove-technologie/README' },
             {
               text: 'HTML',
               collapsed: false,
               items: [
-                { text: '1. Základy, pravidla a DOM', link: '/webove-technologie/html/doc/01-zaklady' },
-                { text: '2. Přehled používaných značek', link: '/webove-technologie/html/doc/02-prehled-znacek' },
-                { text: '3. Přístupnost, SEO', link: '/webove-technologie/html/doc/03-pokrocile-techniky' },
-                { text: '4. Tipy a triky', link: '/webove-technologie/html/doc/04-tipy-a-triky' }
+                { text: 'Úvod', link: '/webove-technologie/html/README' },
+                { text: 'Základy, pravidla a DOM', link: '/webove-technologie/html/doc/01-zaklady' },
+                { text: 'Přehled používaných značek', link: '/webove-technologie/html/doc/02-prehled-znacek' },
+                { text: 'Přístupnost, SEO', link: '/webove-technologie/html/doc/03-pokrocile-techniky' },
+                { text: 'Tipy a triky', link: '/webove-technologie/html/doc/04-tipy-a-triky' }
               ]
             },
             {
               text: 'CSS',
               collapsed: false,
               items: [
-                { text: '1. Základy a selektory', link: '/webove-technologie/css/doc/01-zaklady-css' },
-                { text: '2. Box Model a barvy', link: '/webove-technologie/css/doc/02-box-model-barvy' },
-                { text: '3. Layout a pozicování', link: '/webove-technologie/css/doc/03-layout' },
-                { text: '4. UI/UX a Responzivita', link: '/webove-technologie/css/doc/04-ui-ux' }
+                { text: 'Úvod', link: '/webove-technologie/css/README' },
+                { text: 'Základy a selektory', link: '/webove-technologie/css/doc/01-zaklady-css' },
+                { text: 'Box Model a barvy', link: '/webove-technologie/css/doc/02-box-model-barvy' },
+                { text: 'Layout a pozicování', link: '/webove-technologie/css/doc/03-layout' },
+                { text: 'UI/UX a Responzivita', link: '/webove-technologie/css/doc/04-ui-ux' }
               ]
             },
             {
               text: 'Kompetence',
               collapsed: true,
               items: [
-                { text: 'O kompetencích', link: '/webove-technologie/kompetence/' },
-                { text: 'HTML', link: '/webove-technologie/kompetence/doc/html' },
-                { text: 'CSS Základy', link: '/webove-technologie/kompetence/doc/css-basics' },
-                { text: 'CSS Layout', link: '/webove-technologie/kompetence/doc/css-layout' },
-                { text: 'UI / UX', link: '/webove-technologie/kompetence/doc/ui-ux' },
+                { text: 'O kompetencích', link: '/webove-technologie/kompetence/README' },
+                { text: 'Webový ekosystém', link: '/webove-technologie/kompetence/doc/web' },
+                { text: 'DevTools', link: '/webove-technologie/kompetence/doc/devtools' },
+                { text: 'Git a správa verzí', link: '/webove-technologie/kompetence/doc/git-basics' },
+                { text: 'HTML', link: '/webove-technologie/kompetence/doc/html-basics' },
+                { text: 'CSS základy', link: '/webove-technologie/kompetence/doc/css-basics' },
+                { text: 'CSS layout', link: '/webove-technologie/kompetence/doc/css-layout' },
+                { text: 'UI/UX a Design', link: '/webove-technologie/kompetence/doc/ui-ux' },
                 { text: 'Základy JS', link: '/webove-technologie/kompetence/doc/js-basics' },
-                { text: 'Práce s DOMem', link: '/webove-technologie/kompetence/doc/js-dom' },
-                { text: 'Složitější JS', link: '/webove-technologie/kompetence/doc/js-advanced' },
-                { text: 'Příprava PHP Serveru', link: '/webove-technologie/kompetence/doc/php-server' }
+                { text: 'JS DOM', link: '/webove-technologie/kompetence/doc/js-dom' },
+                { text: 'JS ES6+', link: '/webove-technologie/kompetence/doc/js-es6' },
+                { text: 'Asynchronní JS a API', link: '/webove-technologie/kompetence/doc/js-async' },
+                { text: 'Nástroje a NPM', link: '/webove-technologie/kompetence/doc/tools-npm' },
+                { text: 'Nasazení webu', link: '/webove-technologie/kompetence/doc/deployment' },
+                { text: 'Virtualizace a Docker', link: '/webove-technologie/kompetence/doc/docker' },
+                { text: 'Cheat Sheet', link: '/webove-technologie/kompetence/doc/cheatsheet' }
+
               ]
             }
           ]
@@ -64,12 +76,13 @@ export default defineConfig({
         {
           text: 'Programování',
           items: [
-            { text: 'Rozcestník', link: '/programovani/' },
+            { text: 'Rozcestník', link: '/programovani/README' },
+            { text: 'Pyramida porozumění', link: '/programovani/pyramida-porozumeni/README' },
             {
               text: 'Problém batohu',
               collapsed: false,
               items: [
-                { text: 'Úvod', link: '/programovani/problem-batohu-techniky/' },
+                { text: 'Úvod', link: '/programovani/problem-batohu-techniky/README' },
                 { text: 'Hrubá síla (Brute Force)', link: '/programovani/problem-batohu-techniky/doc/brute-force-no-recursive' },
                 { text: 'Hrubá síla (Rekurzivní)', link: '/programovani/problem-batohu-techniky/doc/brute-force-recursive' },
                 { text: 'Genetický algoritmus', link: '/programovani/problem-batohu-techniky/doc/genetic' },
@@ -78,9 +91,25 @@ export default defineConfig({
                 { text: 'Náhodný výběr', link: '/programovani/problem-batohu-techniky/doc/random-shooting' }
               ]
             },
-            { text: 'Pyramida porozumění', link: '/programovani/pyramida-porozumeni/' },
-            { text: 'Task assignment', link: '/programovani/task/' },
-            { text: 'Teorie grafů', link: '/programovani/teorie-grafu/' }
+            {
+              text: 'Úlohy',
+              collapsed: true,
+              items: [
+                { text: 'Operace Blackout', link: '/programovani/task/01-operace-blackout/README' },
+
+              ]
+            },
+            {
+              text: 'Teorie grafů',
+              collapsed: false,
+              items: [
+                { text: 'Úvod', link: '/programovani/teorie-grafu/README' },
+                { text: 'Základní pojmy', link: '/programovani/teorie-grafu/docs/01-uvod' },
+                { text: 'Vlastnosti grafů', link: '/programovani/teorie-grafu/docs/02-vlastnosti-grafu' },
+                { text: 'Reprezentace grafu', link: '/programovani/teorie-grafu/docs/03-reprezentace' },
+                { text: 'Základní algoritmy', link: '/programovani/teorie-grafu/docs/04-zakladni-algoritmy' }
+              ]
+            }
           ]
         }
       ],
@@ -89,7 +118,7 @@ export default defineConfig({
         {
           text: 'Databáze',
           items: [
-            { text: 'Rozcestník', link: '/databaze/' },
+            { text: 'Rozcestník', link: '/databaze/README' },
             {
               text: 'Teorie',
               collapsed: false,
@@ -103,9 +132,12 @@ export default defineConfig({
               text: 'Projekt Cinema',
               collapsed: false,
               items: [
-                { text: 'O projektu', link: '/databaze/cinema/' },
-                { text: 'Zadání', link: '/databaze/cinema/doc/zadani' },
-                { text: 'Model databáze', link: '/databaze/cinema/doc/dictionary' }
+                { text: 'O projektu', link: '/databaze/cinema/README' },
+                { text: 'Analýza', link: '/databaze/cinema/doc/analysis' },
+                { text: 'E-R schéma', link: '/databaze/cinema/doc/er-schema' },
+                { text: 'Datový slovník', link: '/databaze/cinema/doc/dictionary' },
+                { text: 'Tabulky', link: '/databaze/cinema/doc/tables' }
+
               ]
             }
           ]
@@ -116,21 +148,32 @@ export default defineConfig({
         {
           text: 'Kritické myšlení',
           items: [
-            { text: 'Základy kognitivního myšlení', link: '/kriticke-mysleni/doc/01-kognitivni' },
-            { text: 'Anatomie spikleneckých teorií', link: '/kriticke-mysleni/doc/02-anatomie' },
-            { text: 'Vyvrácení logiky (Ad hominem)', link: '/kriticke-mysleni/doc/03-ad-hominem' },
-            { text: 'Falešný kompromis', link: '/kriticke-mysleni/doc/04-falesny-kompromis' },
-            { text: 'Post hoc ergo propter', link: '/kriticke-mysleni/doc/05-post-hoc' },
-            { text: 'Konfirmační zkreslení', link: '/kriticke-mysleni/doc/06-konfirmacni-zkresleni' },
-            { text: 'Falešné dilema', link: '/kriticke-mysleni/doc/07-falesne-dilema' },
-            { text: 'Šikmá plocha', link: '/kriticke-mysleni/doc/08-sikma-plocha' }
+            { text: 'Rozcestník', link: '/kriticke-mysleni/README' },
+            { text: 'Kognitivní zkreslení', link: '/kriticke-mysleni/doc/kognitivni-zkresleni' },
+            { text: 'Anatomie dezinformace', link: '/kriticke-mysleni/doc/anatomie-dezinformace' },
+            { text: 'Strategie ověřování', link: '/kriticke-mysleni/doc/strategie-overovani' },
+            { text: 'Argumentační fauly', link: '/kriticke-mysleni/doc/argumentacni-fauly' },
+            { text: 'Technologie manipulace', link: '/kriticke-mysleni/doc/technologie-manipulace' },
+            { text: 'Ekonomika pozornosti', link: '/kriticke-mysleni/doc/ekonomika-pozornosti' },
+            { text: 'Desatero digitální sebeobrany', link: '/kriticke-mysleni/doc/desatero-obrany' },
+            { text: 'Slovník pojmů', link: '/kriticke-mysleni/doc/slovnik-pojmu' },
+            { text: 'Kvízy a testování', link: '/kriticke-mysleni/doc/kvizy-a-reseni' }
+          ]
+        }
+      ],
+
+      '/markdown/': [
+        {
+          text: 'Markdown Dokumentace',
+          items: [
+            { text: 'Domů', link: '/markdown/README' }
           ]
         }
       ]
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/bubilem/dev-zapisnik' }
+      { icon: 'github', link: 'https://github.com/bubilem' }
     ]
   }
 })
