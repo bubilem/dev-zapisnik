@@ -7,11 +7,11 @@ Tato sekce obsahuje studijní materiály týkající se databázových systémů
 ### Teorie
 V této části se seznámíte se základními principy a koncepty.
 
-*   **[1. Úvod do databází](teorie/01-uvod-do-databazi.md)**  
+*   **[1. Úvod do databází](doc/01-uvod-do-databazi.md)**  
     Definice databáze, historie, základní pojmy (data, informace, znalost).
-*   **[2. Systémy řízení báze dat (SŘBD / DBMS)](teorie/02-dbms.md)**  
+*   **[2. Systémy řízení báze dat (SŘBD / DBMS)](doc/02-dbms.md)**  
     Architektura databázových systémů, typy databází (relační, NoSQL), transakce (ACID).
-*   **[3. Konceptuální modelování (ER diagramy)](teorie/03-konceptualni-modelovani.md)**  
+*   **[3. Konceptuální modelování (ER diagramy)](doc/03-konceptualni-modelovani.md)**  
     Jak navrhnout strukturu databáze. Entity, atributy, vztahy, kardinalita.
 
 ### Praktické ukázky a projekty

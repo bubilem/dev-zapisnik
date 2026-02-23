@@ -18,7 +18,7 @@ Hlavní předností modelu je **dynamická cenotvorba**, která vypočítává c
 
 Projekt je rozdělen do logických celků pro snadnou orientaci:
 
-- **`/docs`**: Dokumentace projektu.
+- **`/doc`**: Dokumentace projektu.
 - `analysis.md`: Původní byznys analýza a požadavky.
 - `dictionary.md`: Podrobný technický popis tabulek a atributů.
 

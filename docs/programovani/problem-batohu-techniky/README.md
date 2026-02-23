@@ -84,19 +84,19 @@ Tato metoda se inspiruje biologií a evolucí.
 Zde najdete detailní popis a ukázky kódů pro jednotlivé techniky řešení Problému batohu:
 
 ### Hrubá síla (Brute Force)
-*   **[Rekurzivní řešení](docs/brute-force-recursive.md)** – Prochází strom možností.
+*   **[Rekurzivní řešení](doc/brute-force-recursive.md)** – Prochází strom možností.
     *   Kód: [`src/brute-force-recursive.js`](src/brute-force-recursive.js)
-*   **[Iterativní řešení](docs/brute-force-no-recursive.md)** – Využívá binární reprezentaci čísel.
+*   **[Iterativní řešení](doc/brute-force-no-recursive.md)** – Využívá binární reprezentaci čísel.
     *   Kód: [`src/brute-force-no-recursive.js`](src/brute-force-no-recursive.js)
 
 ### Hladové algoritmy a Heuristiky
-*   **[Naivní hladový algoritmus](docs/naive-greedy-algorithm.md)** – Bere věci, jak přijdou pod ruku.
+*   **[Naivní hladový algoritmus](doc/naive-greedy-algorithm.md)** – Bere věci, jak přijdou pod ruku.
     *   Kód: [`src/naive-greedy-algorithm.js`](src/naive-greedy-algorithm.js)
-*   **[Heuristika poměr cena/výkon](docs/heuristic-ratio.md)** – Řadí předměty podle výhodnosti.
+*   **[Heuristika poměr cena/výkon](doc/heuristic-ratio.md)** – Řadí předměty podle výhodnosti.
     *   Kód: [`src/heuristic-ratio.js`](src/heuristic-ratio.js)
 
 ### Pokročilé a Náhodné techniky
-*   **[Náhodný výběr (Random Shooting)](docs/random-shooting.md)** – Metoda Monte Carlo.
+*   **[Náhodný výběr (Random Shooting)](doc/random-shooting.md)** – Metoda Monte Carlo.
     *   Kód: [`src/random-shooting.js`](src/random-shooting.js)
-*   **[Genetický algoritmus](docs/genetic.md)** – Evoluční přístup s populacemi a křížením.
+*   **[Genetický algoritmus](doc/genetic.md)** – Evoluční přístup s populacemi a křížením.
     *   Kód: [`src/genetic.js`](src/genetic.js)
