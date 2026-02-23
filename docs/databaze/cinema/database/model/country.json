@@ -1,0 +1,10 @@
+{
+  "CZ": {
+    "name": "Czech Republic",
+    "dial_code": "+420"
+  },
+  "DE": {
+    "name": "Germany",
+    "dial_code": "+49"
+  }
+}
