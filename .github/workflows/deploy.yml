@@ -1,0 +1,58 @@
+# Ukázkový YAML ze stránek VitePressu pro generování na GitHub Pages
+name: Deploy VitePress site to Pages
+
+on:
+  # Spustí se pokaždé, když provedete push do větve main / master
+  push:
+    branches: [main, master]
+  # Umožní i manuální spuštění tlačítkem z GitHub záložky Actions
+  workflow_dispatch:
+
+# Oprávnění pro bota, aby vůbec mohl do Pages zapsat HTML weby
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Koncurrency zajistí, aby se nenasazovaly 2 buildy naráz, pokud pushnete víckrát rychle za sebou
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  # 1. ČÁST: Sestavení celého webu do jedné složky .vitepress/dist
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Vitepress potřebuje znát git historii pro výpočet 'Last updated' časů na stránce
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Install dependencies
+        run: npm install
+      - name: Build with VitePress
+        run: npm run docs:build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/.vitepress/dist
+
+  # 2. ČÁST: Vystřelení sestavené statické složky /dist na internet přes GitHub Pages
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
