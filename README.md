@@ -6,8 +6,7 @@ Vítejte v mém zápisníku úryvků kódu, tipů a konceptů z oblasti vývoje 
 
 *   [`/docs/programovani/`](docs/programovani/) – Obecné principy programování a algoritmy
 *   [`/docs/databaze/`](docs/databaze/) – Návrh a práce s relačními i NoSQL databázemi
-*   [`/docs/webove-technologie/html/`](docs/webove-technologie/html/) – Tvorba webových stránek a sémantika (HTML)
-*   [`/docs/webove-technologie/css/`](docs/webove-technologie/css/) – Kaskádové styly, Layouty, UI/UX (CSS)
+*   [`/docs/webove-technologie/`](docs/webove-technologie/) – Tvorba webových aplikací (frontend/backend)
 *   [`/docs/kriticke-mysleni/`](docs/kriticke-mysleni/) – Porozumění informačním dezinformacím a kognitivním zkreslením
 *   [`/docs/markdown/`](docs/markdown/) – Formátování dokumentace
 
