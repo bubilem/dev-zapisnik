@@ -2,7 +2,11 @@
 
 Vítejte v mém zápisníku úryvků kódu, tipů a konceptů z oblasti vývoje aplikací. Vzniká jako studijní a referenční podklad. 
 
-## Obsah
+## [Online portál zápisníku](https://bubilem.github.io/dev-zapisnik/)
+
+Celý obsah tohoto repozitáře je publikován dynamicky pomocí moderního nástroje VitePress. Je hostován přímo na GitHub Pages a je přístupný na adrese: https://bubilem.github.io/dev-zapisnik/.
+
+## Obsah repozitáře
 
 *   [`/docs/programovani/`](docs/programovani/) – Obecné principy programování a algoritmy
 *   [`/docs/databaze/`](docs/databaze/) – Návrh a práce s relačními i NoSQL databázemi
