@@ -4,6 +4,8 @@ export default defineConfig({
   title: "Dev Zápisník",
   description: "Studijní a referenční podklad z oblasti vývoje aplikací",
   lang: 'cs-CZ',
+  base: '/dev-zapisnik/',
+  ignoreDeadLinks: true,
 
   themeConfig: {
     // Navigace nahoře
