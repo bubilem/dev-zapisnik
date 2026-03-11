@@ -30,3 +30,8 @@ Tento materiál je rozdělen do následujících kapitol:
 *   Prohledávání do šířky (BFS - Breadth-First Search).
 *   Prohledávání do hloubky (DFS - Depth-First Search).
 *   Nejkratší cesta v grafu (Dijkstrův algoritmus).
+
+### 5. [Aplikace a historie: Mosty města Královce](docs/05-mosty.md)
+*   Problém 7 mostů města Královce (Königsberg).
+*   Eulerovo řešení a abstrakce.
+*   Eulerovské grafy (tah a kruh).

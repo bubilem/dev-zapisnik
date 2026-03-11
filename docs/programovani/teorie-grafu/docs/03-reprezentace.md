@@ -33,27 +33,27 @@ C 1 0 0
 #### Python (Matice sousednosti)
 ```python
 # Reprezentace pomocí 2D pole (list of lists)
-graf = [
+graph = [
     [0, 1, 1], # A
     [1, 0, 0], # B
     [1, 0, 0]  # C
 ]
 
-def existuje_hrana(g, u, v):
+def has_edge(g, u, v):
     return g[u][v] == 1
 
-print(existuje_hrana(graf, 0, 1)) # True (A-B)
+print(has_edge(graph, 0, 1)) # True (A-B)
 ```
 
 #### PHP (Matice sousednosti)
 ```php
-$graf = [
+$graph = [
     [0, 1, 1],
     [1, 0, 0],
     [1, 0, 0]
 ];
 
-function existujeHrana($g, $u, $v) {
+function hasEdge($g, $u, $v) {
     return $g[$u][$v] === 1;
 }
 ```
@@ -70,28 +70,28 @@ Pro každý vrchol máme seznam (list/array) vrcholů, se kterými sousedí.
 
 #### Python (Slovník seznamů)
 ```python
-graf = {
+graph = {
     'A': ['B', 'C'],
     'B': ['A'],
     'C': ['A', 'D'],
     'D': []
 }
 
-for soused in graf['A']:
-    print(f"A sousedí s {soused}")
+for neighbor in graph['A']:
+    print(f"A sousedí s {neighbor}")
 ```
 
 #### PHP (Asociativní pole)
 ```php
-$graf = [
+$graph = [
     'A' => ['B', 'C'],
     'B' => ['A'],
     'C' => ['A', 'D'],
     'D' => []
 ];
 
-foreach ($graf['A'] as $soused) {
-    echo "A sousedí s $soused\n";
+foreach ($graph['A'] as $neighbor) {
+    echo "A sousedí s $neighbor\n";
 }
 ```
 
@@ -108,10 +108,10 @@ Každý vrchol je objekt (instace třídy), který obsahuje seznam odkazů na so
 class Node:
     def __init__(self, value):
         self.value = value
-        self.sousede = [] # List of Node objects
+        self.neighbors = [] # List of Node objects
 
     def add_edge(self, node):
-        self.sousede.append(node)
+        self.neighbors.append(node)
 
 # Vytvoření grafu
 a = Node('A')
@@ -126,14 +126,14 @@ a.add_edge(c) # A -> C
 ```php
 class Node {
     public $value;
-    public $sousede = [];
+    public $neighbors = [];
 
     public function __construct($value) {
         $this->value = $value;
     }
 
     public function addEdge(Node $node) {
-        $this->sousede[] = $node;
+        $this->neighbors[] = $node;
     }
 }
 
@@ -150,3 +150,48 @@ Matice $V \times E$ (vrcholy $\times$ hrany).
 - Řádky jsou vrcholy, sloupce jsou hrany.
 - Hodnota určuje, zda je vrchol součástí dané hrany.
 - Používá se méně často (např. v hypergrafech).
+
+### Příklad (Neorientovaný)
+
+Mějme graf se 3 vrcholy (A, B, C) a 2 hranami ($e_1$ mezi A a B, $e_2$ mezi A a C).
+
+```text
+   e1 e2
+A  1  1
+B  1  0
+C  0  1
+```
+(Vrchol A je součástí hran $e_1$ i $e_2$, vrchol B jen $e_1$, vrchol C jen $e_2$)
+
+### Implementace
+
+#### Python (Incidenční matice)
+```python
+# Řádky jsou vrcholy (A=0, B=1, C=2), sloupce jsou hrany (e1=0, e2=1)
+graph = [
+    [1, 1], # A
+    [1, 0], # B
+    [0, 1]  # C
+]
+
+def is_incident(g, v, e):
+    return g[v][e] == 1
+
+print(is_incident(graph, 0, 0)) # True (vrchol A leží na hraně e1)
+```
+
+#### PHP (Incidenční matice)
+```php
+// Řádky jsou vrcholy (A=0, B=1, C=2), sloupce jsou hrany (e1=0, e2=1)
+$graph = [
+    [1, 1],
+    [1, 0],
+    [0, 1]
+];
+
+function isIncident($g, $v, $e) {
+    return $g[$v][$e] === 1;
+}
+
+echo isIncident($graph, 0, 0) ? "True\n" : "False\n"; // Vypíše True
+```

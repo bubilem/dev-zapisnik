@@ -109,7 +109,8 @@ export default defineConfig({
                 { text: 'Základní pojmy', link: '/programovani/teorie-grafu/docs/01-uvod' },
                 { text: 'Vlastnosti grafů', link: '/programovani/teorie-grafu/docs/02-vlastnosti-grafu' },
                 { text: 'Reprezentace grafu', link: '/programovani/teorie-grafu/docs/03-reprezentace' },
-                { text: 'Základní algoritmy', link: '/programovani/teorie-grafu/docs/04-zakladni-algoritmy' }
+                { text: 'Základní algoritmy', link: '/programovani/teorie-grafu/docs/04-zakladni-algoritmy' },
+                { text: 'Mosty města Královce', link: '/programovani/teorie-grafu/docs/05-mosty' }
               ]
             }
           ]

@@ -18,8 +18,9 @@ Používáme dva hlavní algoritmy:
 **Otázka:** Existuje cesta mezi vrcholem A a B?
 **Řešení:** Spustíme prohledávání (BFS nebo DFS) z vrcholu A a zjistíme, zda jsme navštívili vrchol B.
 
+### Příklad rekurzivního DFS pro zjištění dosažitelnosti
+
 ```python
-# Příklad DFS pro zjištění dosažitelnosti
 visited = set()
 
 def dfs_exists_path(graph, start, end):
@@ -36,6 +37,32 @@ def dfs_exists_path(graph, start, end):
     return False
 ```
 
+### Příklad iterativního DFS pro zjištění dosažitelnosti
+
+```python
+def dfs_exists_path_iterative(graph, start, end):
+    visited = set()
+    to_visit = [start] # Zásobník s prvky k navštívení
+    
+    while to_visit: # Dokud není zásobník prázdný
+        current = to_visit.pop() # Vyjme a vrátí poslední prvek (LIFO)
+        
+        if current == end:
+            # Našli jsme cíl
+            return True
+            
+        if current not in visited:
+            # Označíme vrchol jako navštívený
+            visited.add(current)
+            
+            # Přidáme všechny nenavštívené sousedy do zásobníku k pozdější návštěvě
+            for neighbor in graph[current]:
+                if neighbor not in visited:
+                    to_visit.append(neighbor)
+                    
+    return False
+```
+
 ---
 
 ## 2. Nalezení cesty (Path Finding)
@@ -45,6 +72,55 @@ def dfs_exists_path(graph, start, end):
 Když dojdeme do cíle, "zrekonstruujeme" cestu zpětně od B k A a poté ji otočíme.
 
 **Rekonstrukce cesty:** `B -> parent[B] -> parent[parent[B]] ... -> A`
+
+### Příklad implementace (Nalezení cesty pomocí BFS)
+
+```python
+from collections import deque
+
+def find_path_bfs(graph, start, end):
+    # Fronta pro BFS udržuje uzly k navštívení
+    queue = deque([start])
+    
+    # Slovník předchůdců: klíč je uzel, hodnota je uzel, ze kterého jsme přišli
+    # Slouží zároveň jako množina navštívených uzlů (visited)
+    parent = {start: None}
+    
+    while queue:
+        current = queue.popleft() # Vyjme a vrátí první prvek (FIFO)
+        
+        if current == end:
+            # Našli jsme cíl, zrekonstruujeme cestu pomocí předchůdců
+            path = []
+            curr_node = end
+            # Zpětný průchod od cíle ke startu
+            while curr_node is not None:
+                path.append(curr_node)
+                curr_node = parent[curr_node]
+            # Cesta je konstruována pozpátku, proto ji otočíme
+            path.reverse()
+            return path
+            
+        for neighbor in graph[current]:
+            if neighbor not in parent:
+                # Zaznamenáme si, odkud jsme do souseda přišli
+                parent[neighbor] = current
+                queue.append(neighbor)
+                
+    return None # Cesta neexistuje
+
+# Příklad použití
+graph_example = {
+    'A': ['B', 'C'],
+    'B': ['A', 'D', 'E'],
+    'C': ['A', 'F'],
+    'D': ['B'],
+    'E': ['B', 'F'],
+    'F': ['C', 'E']
+}
+
+print(find_path_bfs(graph_example, 'A', 'F')) # Vypíše: ['A', 'C', 'F']
+```
 
 ---
 
@@ -94,7 +170,7 @@ Mějme graf:
 ```python
 import heapq
 
-def dijkstra_shortest_path(graph, start):
+def dijkstra_shortest_path(graph, start, end):
     # Inicializace vzdáleností na nekonečno
     distances = {vertex: float('infinity') for vertex in graph}
     distances[start] = 0
@@ -102,9 +178,17 @@ def dijkstra_shortest_path(graph, start):
     # Prioritní fronta: ukládá dvojice (vzdálenost, vrchol)
     pq = [(0, start)]
     
+    # Slovník předchůdců pro rekonstrukci cesty 
+    parent = {start: None}
+    
     while pq:
         # Vybereme vrchol s nejmenší známou vzdáleností
         current_distance, current_vertex = heapq.heappop(pq)
+        
+        # Můžeme optimalizovat: pokud vyjmeme cílový uzel a jedná se o nejkratší cestu do něj, 
+        # nemusíme dál prohledávat (protože už všechny ostastní cesty z pq mají větší nebo rovnou vzdálenost).
+        if current_vertex == end:
+            break
         
         # Pokud jsme našli lepší cestu už dříve, přeskočíme
         if current_distance > distances[current_vertex]:
@@ -117,9 +201,19 @@ def dijkstra_shortest_path(graph, start):
             # Pokud najdeme kratší cestu k sousedovi
             if distance < distances[neighbor]:
                 distances[neighbor] = distance
+                parent[neighbor] = current_vertex # Zaznamenáme si ze kterého uzlu jsme se dostali nejrychleji
                 heapq.heappush(pq, (distance, neighbor))
                 
-    return distances
+    # Rekonstrukce cesty, pokud existuje spojení do cíle
+    path = []
+    if distances[end] != float('infinity'):
+        curr_node = end
+        while curr_node is not None:
+            path.append(curr_node)
+            curr_node = parent.get(curr_node, None) # Může se stát, že uzel parent nemá, pokud jsme u konce
+        path.reverse()
+        
+    return distances[end], path
 
 # Použití (odpovídá příkladu výše)
 graf = {
@@ -129,7 +223,10 @@ graf = {
     'D': {}
 }
 
-shortest_paths = dijkstra_shortest_path(graf, 'A')
-print(shortest_paths)
-# Výsledek: {'A': 0, 'C': 3, 'B': 5, 'D': 6}
+shortest_distance, shortest_path = dijkstra_shortest_path(graf, 'A', 'D')
+print(f"Vzdálenost: {shortest_distance}")
+print(f"Cesta: {' -> '.join(shortest_path)}")
+# Výsledek:
+# Vzdálenost: 6
+# Cesta: A -> C -> B -> D
 ```
