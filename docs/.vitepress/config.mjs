@@ -139,7 +139,11 @@ export default defineConfig({
                 { text: 'Analýza', link: '/databaze/cinema/doc/analysis' },
                 { text: 'E-R schéma', link: '/databaze/cinema/doc/er-schema' },
                 { text: 'Datový slovník', link: '/databaze/cinema/doc/dictionary' },
-                { text: 'Tabulky', link: '/databaze/cinema/doc/tables' }
+                { text: 'Tabulky', link: '/databaze/cinema/doc/tables' },
+                { text: 'SQL INSERT', link: '/databaze/cinema/doc/sql-insert' },
+                { text: 'SQL UPDATE', link: '/databaze/cinema/doc/sql-update' },
+                { text: 'SQL DELETE', link: '/databaze/cinema/doc/sql-delete' },
+                { text: 'SQL SELECT', link: '/databaze/cinema/doc/sql-select' }
 
               ]
             }
