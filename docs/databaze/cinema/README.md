@@ -18,18 +18,21 @@ Hlavní předností modelu je **dynamická cenotvorba**, která vypočítává c
 
 Projekt je rozdělen do logických celků pro snadnou orientaci:
 
-- **`/doc`**: Dokumentace projektu.
+### `/doc`: Dokumentace projektu.
 - [analysis.md](doc/analysis.md): Původní byznys analýza a požadavky.
 - [dictionary.md](doc/dictionary.md): Podrobný technický popis tabulek a atributů.
 - [tables.md](doc/tables.md): Tabulky databáze.
 - [er-schema.md](doc/er-schema.md): E-R schéma databáze.
 
-- **`/database`**: SQL skripty a modely.
+### `/database`: SQL skripty a modely.
 - [model/cinema.mwb](database/model/cinema.mwb): Zdrojový soubor pro MySQL Workbench.
 - [scripts/01-schema.sql](database/scripts/01-schema.sql): Skript pro vytvoření struktury databáze.
-- [scripts/02-data.sql](database/scripts/02-data.sql): Ukázková data pro testování (WIP).
 
-- **`/examples`**: Praktické ukázky SQL dotazů (SELECTy, reporty).
+### Příklady SQL dotazů (DML)
+- [sql-insert.md](doc/sql-insert.md): Ukázky vkládání (Kina, Sály, Rezervace).
+- [sql-update.md](doc/sql-update.md): Ukázky aktualizace (Změny údajů, kapacity, uložení platby).
+- [sql-delete.md](doc/sql-delete.md): Ukázky mazání dat s ohledem na kaskádová omezení.
+- [sql-select.md](doc/sql-select.md): Ukázky dotazování (Spojení přes JOIN, filtry a agregace).
 
 ---
 
