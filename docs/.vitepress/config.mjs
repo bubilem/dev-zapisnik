@@ -128,7 +128,12 @@ export default defineConfig({
               items: [
                 { text: '1. Úvod do databází', link: '/databaze/doc/01-uvod-do-databazi' },
                 { text: '2. SŘBD / DBMS', link: '/databaze/doc/02-dbms' },
-                { text: '3. Konceptuální modelování', link: '/databaze/doc/03-konceptualni-modelovani' }
+                { text: '3. Konceptuální modelování', link: '/databaze/doc/03-konceptualni-modelovani' },
+                { text: '4. Relační model dat', link: '/databaze/doc/04-relacni-model-dat' },
+                { text: '5. Převod do RMD', link: '/databaze/doc/05-koncept-rmd' },
+                { text: '6. Normalizace', link: '/databaze/doc/06-rmd-normalizace' },
+                { text: '7. Další modely', link: '/databaze/doc/07-dalsi-modely' },
+                { text: '8. Datové typy', link: '/databaze/doc/08-datove-typy' }
               ]
             },
             {
