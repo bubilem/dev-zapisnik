@@ -49,7 +49,7 @@ export default defineConfig({
             },
             {
               text: 'Kompetence',
-              collapsed: true,
+              collapsed: false,
               items: [
                 { text: 'O kompetencích', link: '/webove-technologie/kompetence/README' },
                 { text: 'Webový ekosystém', link: '/webove-technologie/kompetence/doc/web' },
@@ -99,6 +99,18 @@ export default defineConfig({
               items: [
                 { text: 'Operace Blackout', link: '/programovani/task/01-operace-blackout/README' },
 
+              ]
+            },
+            {
+              text: 'Objektově orientované programování',
+              collapsed: false,
+              items: [
+                { text: 'Úvod', link: '/programovani/oop-frame/README' },
+                { text: 'Základní pilíře a principy OOP', link: '/programovani/oop-frame/doc/oop-principy' },
+                { text: 'Základy OOP', link: '/programovani/oop-frame/doc/oop-basics' },
+                { text: 'Porovnání implementace OOP v JavaScript, Python a PHP', link: '/programovani/oop-frame/doc/oop-frame' },
+                { text: 'Popis rámce pro náš příklad', link: '/programovani/oop-frame/doc/frame' },
+                { text: 'Regulární výrazy', link: '/programovani/oop-frame/doc/regexp' }
               ]
             },
             {

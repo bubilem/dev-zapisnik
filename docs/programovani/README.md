@@ -12,3 +12,5 @@ Tato sekce shromažďuje materiály, poznámky a úkoly z obecného programován
     * Koncepty uzlů a hran, grafové vyhledávání (BFS, DFS) a praktická aplikace.
 *   **[Přiřazování úkolů (Task assignment)](task/README.md)**
     * Využití algoritmů na efektivní alokace omezených zdrojů.
+*   **[Příklad objektově orientovaného programování (OOP)](oop-frame/README.md)**
+    * Principy OOP a jejich implementace v JS, Pythonu a PHP na příkladu ethernetového rámce.
