@@ -15,6 +15,7 @@ export default defineConfig({
       { text: 'WEB', link: '/webove-technologie/README' },
       { text: 'PRG', link: '/programovani/README' },
       { text: 'DAT', link: '/databaze/README' },
+      { text: 'AI', link: '/ai/README' },
       { text: 'MD', link: '/markdown/README' }
     ],
 
@@ -162,6 +163,24 @@ export default defineConfig({
                 { text: 'SQL DELETE', link: '/databaze/cinema/doc/sql-delete' },
                 { text: 'SQL SELECT', link: '/databaze/cinema/doc/sql-select' }
 
+              ]
+            }
+          ]
+        }
+      ],
+
+      '/ai/': [
+        {
+          text: 'AI',
+          items: [
+            {
+              text: 'Převedení textu na čísla (vektorizace)',
+              collapsed: false,
+              items: [
+                { text: 'Úvod', link: '/ai/word-embedding/README' },
+                { text: 'Převedení textu na čísla (vektorizace)', link: '/ai/word-embedding/doc/word-to-vector' },
+                { text: 'Word Embedding', link: '/ai/word-embedding/doc/word-embedding' },
+                { text: 'Kosinova podobnost', link: '/ai/word-embedding/doc/cosine-similarity' }
               ]
             }
           ]
