@@ -1,23 +1,47 @@
 import { defineConfig } from 'vitepress'
 
-async function transformPageData(pageData) {
-  if (!pageData.content) return
-  const githubBase = 'https://github.com/bubilem/dev-zapisnik/blob/main/docs/'
-  const codeFileRegex = /\[([^\]]+)\]\(([^)]+\.(py|js|php|html|sql|css))\)/g
-  pageData.content = pageData.content.replace(codeFileRegex, (match, text, url) => {
-    if (url.startsWith('http') || url.startsWith('/')) return match
-    const cleanPath = url.replace(/^\.\//, '')
-    return `[${text}](${githubBase}${cleanPath})`
-  })
-}
-
 export default defineConfig({
   title: "Dev Zápisník",
   description: "Studijní a referenční podklad z oblasti vývoje aplikací",
   lang: 'cs-CZ',
   base: '/dev-zapisnik/',
-  transformPageData,
   ignoreDeadLinks: true,
+  markdown: {
+    config: (md) => {
+      const defaultRender = md.renderer.rules.link_open || function (tokens, idx, options, env, self) {
+        return self.renderToken(tokens, idx, options);
+      };
+
+      md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
+        const token = tokens[idx];
+        const hrefIndex = token.attrIndex('href');
+
+        if (hrefIndex >= 0) {
+          const href = token.attrs[hrefIndex][1];
+          const githubBase = 'https://github.com/bubilem/dev-zapisnik/blob/main/docs/';
+
+          // Pokud odkaz končí na naše přípony a není to absolutní URL
+          if (/\.(py|js|php|html|sql|css)$/.test(href) && !href.startsWith('http')) {
+            // Sestavíme cestu k GitHubu
+            // env.relativePath nám řekne, kde jsme, abychom mohli očistit cesty typu ../
+            const cleanPath = href.replace(/^\.\//, '');
+
+            // Tady je trik: pokud je cesta relativní (např. src/file.js), 
+            // musíme ji spojit s aktuální složkou dokumentu
+            const currentDir = env.relativePath ? env.relativePath.split('/').slice(0, -1).join('/') : '';
+            const fullPath = currentDir ? `${currentDir}/${cleanPath}` : cleanPath;
+
+            token.attrs[hrefIndex][1] = `${githubBase}${fullPath}`;
+
+            // Volitelné: otevřít v novém okně
+            token.attrSet('target', '_blank');
+            token.attrSet('rel', 'noopener noreferrer');
+          }
+        }
+        return defaultRender(tokens, idx, options, env, self);
+      };
+    }
+  },
   themeConfig: {
     // Navigace nahoře
     nav: [
