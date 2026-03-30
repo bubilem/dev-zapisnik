@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import mathjax3 from 'markdown-it-mathjax3'
 
 export default defineConfig({
   title: "Dev Zápisník",
@@ -8,6 +9,8 @@ export default defineConfig({
   ignoreDeadLinks: true,
   markdown: {
     config: (md) => {
+      md.use(mathjax3);
+
       const defaultRender = md.renderer.rules.link_open || function (tokens, idx, options, env, self) {
         return self.renderToken(tokens, idx, options);
       };
