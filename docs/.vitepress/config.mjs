@@ -131,8 +131,7 @@ export default defineConfig({
                 { text: 'Základní pilíře a principy OOP', link: '/programovani/oop-frame/doc/oop-principy' },
                 { text: 'Základy OOP', link: '/programovani/oop-frame/doc/oop-basics' },
                 { text: 'Porovnání implementace OOP v JavaScript, Python a PHP', link: '/programovani/oop-frame/doc/oop-frame' },
-                { text: 'Popis rámce pro náš příklad', link: '/programovani/oop-frame/doc/frame' },
-                { text: 'Regulární výrazy', link: '/programovani/oop-frame/doc/regexp' }
+                { text: 'Popis rámce pro náš příklad', link: '/programovani/oop-frame/doc/frame' }
               ]
             },
             {
@@ -183,7 +182,6 @@ export default defineConfig({
                 { text: 'SQL UPDATE', link: '/databaze/cinema/doc/sql-update' },
                 { text: 'SQL DELETE', link: '/databaze/cinema/doc/sql-delete' },
                 { text: 'SQL SELECT', link: '/databaze/cinema/doc/sql-select' }
-
               ]
             }
           ]
