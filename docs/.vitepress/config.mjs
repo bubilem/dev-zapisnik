@@ -228,7 +228,7 @@ export default defineConfig({
 // --- LOGIKA PRO ÚPRAVU ODKAZŮ ---
 // Tato funkce se spustí pro každou stránku zvlášť
 async function transformPageData(pageData) {
-  const githubBase = 'https://github.com/bubilem/dev-zapisnik/blob/main/'
+  const githubBase = 'https://github.com/bubilem/dev-zapisnik/blob/main/docs/'
 
   // Hledá Markdown odkazy na soubory .py, .js, .php, .sh, .sql, .css
   const codeFileRegex = /\[([^\]]+)\]\(([^)]+\.(py|js|php|html|css|sql))\)/g
