@@ -1,4 +1,4 @@
-# Regulární výrazy (RegEx) - Průvodce a Dokumentace
+# Regulární výrazy (RegEx)
 
 Regulární výrazy (zkráceně **RegEx** nebo **RegExp**) jsou extrémně silným nástrojem pro vyhledávání, validaci a úpravu textových řetězců pomocí speciálních formálních pravidel (vzorů). Místo složitě provázaných textových funkcí dokáže jediný, byť někdy hrozivě vypadající, řádek plně popsat pravidla, co přesně v textu musí a nesmí být. 
 
@@ -52,7 +52,7 @@ Pro oblíbené konstrukce se dají využívat vestavěné zkratky nahrazující 
 
 ## 3. Praktické ukázky využití
 
-### Příklad 1: Naše MAC adresa (`^([0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2}$`)
+### Příklad 1: MAC adresa (`^([0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2}$`)
 Z analyzátoru ze simulačního síťového nástroje z našeho projektu znáte přesné testování standardu. Následující RegEx parádně zařizuje, že string `"FA:31:45:65:C6:A9"` projde validátorem v tichosti, avšak `"nejaky-blabol"` už ihned vyhodí výjimku.
 Pojďme si ho logicky rozebrat:
 *   `^` : Text **musí** začít přesně tímto následujícím vzorem.

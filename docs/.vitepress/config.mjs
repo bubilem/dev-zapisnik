@@ -7,6 +7,8 @@ export default defineConfig({
   base: '/dev-zapisnik/',
   ignoreDeadLinks: true,
 
+  transformPageData,
+
   themeConfig: {
     // Navigace nahoře
     nav: [
@@ -16,7 +18,7 @@ export default defineConfig({
       { text: 'PRG', link: '/programovani/README' },
       { text: 'DAT', link: '/databaze/README' },
       { text: 'AI', link: '/ai/README' },
-      { text: 'MD', link: '/markdown/README' }
+      { text: 'OST', link: '/ostatni/README' }
     ],
 
     // Levé postranní menu pro jednotlivé sekce
@@ -205,11 +207,13 @@ export default defineConfig({
         }
       ],
 
-      '/markdown/': [
+      '/ostatni/': [
         {
-          text: 'Markdown Dokumentace',
+          text: 'Ostatní problematiky',
           items: [
-            { text: 'Domů', link: '/markdown/README' }
+            { text: 'Domů', link: '/ostatni/README' },
+            { text: 'Markdown', link: '/ostatni/doc/markdown' },
+            { text: 'Regulární výrazy', link: '/ostatni/doc/regexp' }
           ]
         }
       ]
@@ -220,3 +224,23 @@ export default defineConfig({
     ]
   }
 })
+
+// --- LOGIKA PRO ÚPRAVU ODKAZŮ ---
+// Tato funkce se spustí pro každou stránku zvlášť
+async function transformPageData(pageData) {
+  const githubBase = 'https://github.com/bubilem/dev-zapisnik/blob/main/'
+
+  // Hledá Markdown odkazy na soubory .py, .js, .php, .sh, .sql, .css
+  const codeFileRegex = /\[([^\]]+)\]\(([^)]+\.(py|js|php|html|css|sql))\)/g
+
+  pageData.content = pageData.content.replace(codeFileRegex, (match, text, url) => {
+    // Pokud je to už absolutní link (http...), ignorujeme
+    if (url.startsWith('http')) return match
+
+    // Vyčistíme cestu (odstraníme ./ na začátku)
+    const cleanPath = url.replace(/^\.\//, '')
+
+    // Sestavíme výsledný link na GitHub
+    return `[${text}](${githubBase}${cleanPath})`
+  })
+}

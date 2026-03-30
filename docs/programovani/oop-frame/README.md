@@ -8,7 +8,6 @@ Tento dokument blízce popisuje a porovnává přístupy k objektově orientovan
 - [Základy OOP](./doc/oop-basics.md)
 - [Porovnání implementace OOP v JavaScript, Python a PHP](./doc/oop-frame.md)
 - [Popis rámce pro náš příklad](./doc/frame.md)
-- [Regulární výrazy](./doc/regexp.md)
 
 ## Zdrojové kódy
 

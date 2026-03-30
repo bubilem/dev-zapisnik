@@ -1,4 +1,4 @@
-# Markdown - Základní manuál a tahák
+# Markdown
 
 Markdown je odlehčený značkovací jazyk s jednoduchou syntaxí, který umožňuje formátovat text pro web (HTML), dokumentaci, README soubory a další.
 
