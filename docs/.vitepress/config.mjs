@@ -45,7 +45,6 @@ export default defineConfig({
   themeConfig: {
     // Navigace nahoře
     nav: [
-      { text: 'Úvod', link: '/README' },
       { text: 'KM', link: '/kriticke-mysleni/README' },
       { text: 'WEB', link: '/webove-technologie/README' },
       { text: 'PRG', link: '/programovani/README' },
@@ -60,12 +59,10 @@ export default defineConfig({
         {
           text: 'Webové technologie',
           items: [
-            { text: 'Rozcestník', link: '/webove-technologie/README' },
             {
               text: 'HTML',
               collapsed: false,
               items: [
-                { text: 'Úvod', link: '/webove-technologie/html/README' },
                 { text: 'Základy, pravidla a DOM', link: '/webove-technologie/html/doc/01-zaklady' },
                 { text: 'Přehled používaných značek', link: '/webove-technologie/html/doc/02-prehled-znacek' },
                 { text: 'Přístupnost, SEO', link: '/webove-technologie/html/doc/03-pokrocile-techniky' },
@@ -76,7 +73,6 @@ export default defineConfig({
               text: 'CSS',
               collapsed: false,
               items: [
-                { text: 'Úvod', link: '/webove-technologie/css/README' },
                 { text: 'Základy a selektory', link: '/webove-technologie/css/doc/01-zaklady-css' },
                 { text: 'Box Model a barvy', link: '/webove-technologie/css/doc/02-box-model-barvy' },
                 { text: 'Layout a pozicování', link: '/webove-technologie/css/doc/03-layout' },
@@ -114,13 +110,12 @@ export default defineConfig({
         {
           text: 'Programování',
           items: [
-            { text: 'Rozcestník', link: '/programovani/README' },
             { text: 'Pyramida porozumění', link: '/programovani/pyramida-porozumeni/README' },
             {
               text: 'Problém batohu',
               collapsed: false,
               items: [
-                { text: 'Úvod', link: '/programovani/problem-batohu-techniky/README' },
+                { text: 'Seznámení s problémem', link: '/programovani/problem-batohu-techniky/README' },
                 { text: 'Hrubá síla (Brute Force)', link: '/programovani/problem-batohu-techniky/doc/brute-force-no-recursive' },
                 { text: 'Hrubá síla (Rekurzivní)', link: '/programovani/problem-batohu-techniky/doc/brute-force-recursive' },
                 { text: 'Genetický algoritmus', link: '/programovani/problem-batohu-techniky/doc/genetic' },
@@ -138,11 +133,11 @@ export default defineConfig({
               ]
             },
             {
-              text: 'Objektově orientované programování',
+              text: 'Porovnání OOP',
               collapsed: false,
               items: [
                 { text: 'Úvod', link: '/programovani/oop-frame/README' },
-                { text: 'Základní pilíře a principy OOP', link: '/programovani/oop-frame/doc/oop-principy' },
+                { text: 'Základní principy OOP', link: '/programovani/oop-frame/doc/oop-principy' },
                 { text: 'Základy OOP', link: '/programovani/oop-frame/doc/oop-basics' },
                 { text: 'Porovnání implementace OOP v JavaScript, Python a PHP', link: '/programovani/oop-frame/doc/oop-frame' },
                 { text: 'Popis rámce pro náš příklad', link: '/programovani/oop-frame/doc/frame' }
@@ -168,14 +163,13 @@ export default defineConfig({
         {
           text: 'Databáze',
           items: [
-            { text: 'Rozcestník', link: '/databaze/README' },
             {
               text: 'Teorie',
               collapsed: false,
               items: [
                 { text: '1. Úvod do databází', link: '/databaze/doc/01-uvod-do-databazi' },
                 { text: '2. SŘBD / DBMS', link: '/databaze/doc/02-dbms' },
-                { text: '3. Konceptuální modelování', link: '/databaze/doc/03-konceptualni-modelovani' },
+                { text: '3. Modelování', link: '/databaze/doc/03-konceptualni-modelovani' },
                 { text: '4. Relační model dat', link: '/databaze/doc/04-relacni-model-dat' },
                 { text: '5. Převod do RMD', link: '/databaze/doc/05-koncept-rmd' },
                 { text: '6. Normalizace', link: '/databaze/doc/06-rmd-normalizace' },
@@ -207,11 +201,11 @@ export default defineConfig({
           text: 'AI',
           items: [
             {
-              text: 'Převedení textu na čísla (vektorizace)',
+              text: 'Převedení textu na čísla',
               collapsed: false,
               items: [
                 { text: 'Úvod', link: '/ai/word-embedding/README' },
-                { text: 'Převedení textu na čísla (vektorizace)', link: '/ai/word-embedding/doc/word-to-vector' },
+                { text: 'Vektorizace', link: '/ai/word-embedding/doc/word-to-vector' },
                 { text: 'Word Embedding', link: '/ai/word-embedding/doc/word-embedding' },
                 { text: 'Kosinova podobnost', link: '/ai/word-embedding/doc/cosine-similarity' }
               ]
