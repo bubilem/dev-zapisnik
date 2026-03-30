@@ -1,59 +1,36 @@
-name: Deploy VitePress site to Pages
-
+name: Deploy
 on:
-  # Spustí se pokaždé, když provedete push do větve main / master
   push:
     branches: [main, master]
-  # Umožní i manuální spuštění tlačítkem z GitHub záložky Actions
   workflow_dispatch:
-
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
-# Oprávnění pro bota, aby vůbec mohl do Pages zapsat HTML weby
 permissions:
   contents: read
   pages: write
   id-token: write
-
-# Koncurrency zajistí, aby se nenasazovaly 2 buildy naráz, pokud pushnete víckrát rychle za sebou
-concurrency:
-  group: pages
-  cancel-in-progress: false
-
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 jobs:
-  # 1. ČÁST: Sestavení celého webu do jedné složky .vitepress/dist
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Vitepress potřebuje znát git historii pro výpočet 'Last updated' časů na stránce
-      - name: Setup Node
-        uses: actions/setup-node@v4
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
         with:
-          node-version: 24          
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Install dependencies
-        run: npm install
-      - name: Build with VitePress
-        run: npm run docs:build
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+          node-version: 24
+      - name: Install and Build
+        # Spojíme to do jednoho kroku a použijeme npx přímo
+        run: |
+          npm install
+          npx vitepress build docs
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: docs/.vitepress/dist
-
-  # 2. ČÁST: Vystřelení sestavené statické složky /dist na internet přes GitHub Pages
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     needs: build
     runs-on: ubuntu-latest
-    name: Deploy
+    environment:
+      name: github-pages
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - uses: actions/deploy-pages@v4
