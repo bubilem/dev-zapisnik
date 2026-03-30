@@ -23,6 +23,8 @@ features:
     details: Implementace klasických těžkých problémů (jako je Problém batohu i teorie grafů) postupně od hrubé síly přes heuristiky až po chytré genetické přístupy.
   - title: Databáze
     details: Skriptování tabulek, relační modely, řešení indexů a cizích klíčů na ukázkovém komplexním projektu databáze kina se zónovací cenotvorbou.
-  - title: Markdown
-    details: Základní průvodce syntaxí a používáním Markdownu.
+  - title: AI
+    details: Zajímavosti z oblasti umělé inteligence. Příkladem může být praktické seznámení s Word Embeddings.
+  - title: Ostatní
+    details: Markdown, Regulární výrazy a další problematiky.
 ---
