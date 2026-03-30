@@ -1,5 +1,24 @@
 import { defineConfig } from 'vitepress'
 
+// --- LOGIKA PRO ÚPRAVU ODKAZŮ ---
+async function transformPageData(pageData) {
+  const githubBase = 'https://github.com/bubilem/dev-zapisnik/blob/main/docs/'
+
+  // Hledá Markdown odkazy na soubory .py, .js, .php, .sh, .sql, .css
+  const codeFileRegex = /\[([^\]]+)\]\(([^)]+\.(py|js|php|html|css|sql))\)/g
+
+  pageData.content = pageData.content.replace(codeFileRegex, (match, text, url) => {
+    // Pokud je to už absolutní link (http...), ignorujeme
+    if (url.startsWith('http')) return match
+
+    // Vyčistíme cestu (odstraníme ./ na začátku)
+    const cleanPath = url.replace(/^\.\//, '')
+
+    // Sestavíme výsledný link na GitHub
+    return `[${text}](${githubBase}${cleanPath})`
+  })
+}
+
 export default defineConfig({
   title: "Dev Zápisník",
   description: "Studijní a referenční podklad z oblasti vývoje aplikací",
@@ -224,23 +243,3 @@ export default defineConfig({
     ]
   }
 })
-
-// --- LOGIKA PRO ÚPRAVU ODKAZŮ ---
-// Tato funkce se spustí pro každou stránku zvlášť
-async function transformPageData(pageData) {
-  const githubBase = 'https://github.com/bubilem/dev-zapisnik/blob/main/docs/'
-
-  // Hledá Markdown odkazy na soubory .py, .js, .php, .sh, .sql, .css
-  const codeFileRegex = /\[([^\]]+)\]\(([^)]+\.(py|js|php|html|css|sql))\)/g
-
-  pageData.content = pageData.content.replace(codeFileRegex, (match, text, url) => {
-    // Pokud je to už absolutní link (http...), ignorujeme
-    if (url.startsWith('http')) return match
-
-    // Vyčistíme cestu (odstraníme ./ na začátku)
-    const cleanPath = url.replace(/^\.\//, '')
-
-    // Sestavíme výsledný link na GitHub
-    return `[${text}](${githubBase}${cleanPath})`
-  })
-}
