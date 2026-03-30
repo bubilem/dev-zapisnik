@@ -1,10 +1,22 @@
 import { defineConfig } from 'vitepress'
 
+async function transformPageData(pageData) {
+  if (!pageData.content) return
+  const githubBase = 'https://github.com/bubilem/dev-zapisnik/blob/main/docs/'
+  const codeFileRegex = /\[([^\]]+)\]\(([^)]+\.(py|js|php|html|sql|css))\)/g
+  pageData.content = pageData.content.replace(codeFileRegex, (match, text, url) => {
+    if (url.startsWith('http') || url.startsWith('/')) return match
+    const cleanPath = url.replace(/^\.\//, '')
+    return `[${text}](${githubBase}${cleanPath})`
+  })
+}
+
 export default defineConfig({
   title: "Dev Zápisník",
   description: "Studijní a referenční podklad z oblasti vývoje aplikací",
   lang: 'cs-CZ',
   base: '/dev-zapisnik/',
+  transformPageData,
   ignoreDeadLinks: true,
   themeConfig: {
     // Navigace nahoře
