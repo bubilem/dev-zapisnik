@@ -4,12 +4,12 @@ Vítejte v mém zápisníku úryvků kódu, tipů a konceptů z oblasti vývoje 
 
 ## Obsah
 
-*   [Kriticke mysleni](kriticke-mysleni/README.md) – Porozumění informačním dezinformacím a kognitivním zkreslením
-*   [Webove technologie](webove-technologie/README.md) – Tvorba webových aplikací (frontend/backend)
-*   [Programovani](programovani/README.md) – Obecné principy programování a algoritmy
+*   [Kritické myšlení](kriticke-mysleni/README.md) – Porozumění informačním dezinformacím a kognitivním zkreslením
+*   [Webové technologie](webove-technologie/README.md) – Tvorba webových aplikací (frontend/backend)
+*   [Programování](programovani/README.md) – Obecné principy programování a algoritmy
 *   [Databáze](databaze/README.md) – Návrh a práce s relačními i NoSQL databázemi
-*   [AI](ai/README.md) – Umělá inteligence
-*   [Další problematiky](ostatni/README.md) – Markdown, Regulární výrazy
+*   [Umělá inteligence](ai/README.md) – Zajímavosti z oblasti umělé inteligence v souvislosti s programováním
+*   [Další problematiky](ostatni/README.md) – Markdown, Regulární výrazy...
 
 ## Licence
 
