@@ -83,6 +83,18 @@ export default defineConfig({
               ]
             },
             {
+              text: 'Další problematiky',
+              collapsed: false,
+              items: [
+                { text: 'Úvod', link: '/webove-technologie/web/README' },
+                { text: 'Nástroje', link: '/webove-technologie/web/doc/nastroje' },
+                { text: 'Přístupnost', link: '/webove-technologie/web/doc/pristupnost' },
+                { text: 'SEO', link: '/webove-technologie/web/doc/seo' },
+                { text: 'Výkon', link: '/webove-technologie/web/doc/vykon' },
+                { text: 'Network', link: '/webove-technologie/web/doc/network' },
+              ]
+            },
+            {
               text: 'Kompetence',
               collapsed: false,
               items: [
