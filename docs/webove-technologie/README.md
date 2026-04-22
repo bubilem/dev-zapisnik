@@ -12,3 +12,6 @@ Oblast webových technologií je aktuálně rozdělena na tyto hlavní okruhy:
     Design webů na profi úrovni. Kaskáda, Box model, barvy, tvorba moderních layoutů (Flexbox a Grid), responzivita (Mobile First) a základy dobrého UI/UX.
 *   **[Kompetence](kompetence/README.md)**  
     Přehled požadovaných teoretických i praktických dovedností, které by měl student / vývojář ovládat.
+*   **[Další problematiky](web/README.md)**
+    Přístupnost webu, nástroje pro vývoj webu, SEO optimalizace, a další problematiky spojené s vývojem webových aplikací.
+    

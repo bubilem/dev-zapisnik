@@ -86,7 +86,6 @@ export default defineConfig({
               text: 'Další problematiky',
               collapsed: false,
               items: [
-                { text: 'Úvod', link: '/webove-technologie/web/README' },
                 { text: 'Nástroje', link: '/webove-technologie/web/doc/nastroje' },
                 { text: 'Přístupnost', link: '/webove-technologie/web/doc/pristupnost' },
                 { text: 'SEO', link: '/webove-technologie/web/doc/seo' },
@@ -96,7 +95,7 @@ export default defineConfig({
             },
             {
               text: 'Kompetence',
-              collapsed: false,
+              collapsed: true,
               items: [
                 { text: 'O kompetencích', link: '/webove-technologie/kompetence/README' },
                 { text: 'Webový ekosystém', link: '/webove-technologie/kompetence/doc/web' },

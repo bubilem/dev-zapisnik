@@ -13,6 +13,16 @@ V této části se seznámíte se základními principy a koncepty.
     Architektura databázových systémů, typy databází (relační, NoSQL), transakce (ACID).
 *   **[3. Konceptuální modelování (ER diagramy)](doc/03-konceptualni-modelovani.md)**  
     Jak navrhnout strukturu databáze. Entity, atributy, vztahy, kardinalita.
+*   **[4. Relační model dat](doc/04-relacni-model-dat.md)**  
+    Tvorba tabulek, primární a cizí klíče, vazby.
+*   **[5.Převod ER do RMD ](doc/06-rmd-normalizace.md)**
+    Převod konceptuálního modelu do relačního modelu dat.
+*   **[6. Normalizace](doc/06-sql.md)**
+    Normalizační proces, 1NF, 2NF...
+*   **[7.Další modely](doc/07-dalsi-modely.md)**
+    OODBMS, noSQL...
+*   **[8. Datové typy](doc/08-datove-typy.md)**
+    Číselné typy, textové typy, typy pro datum a čas.
 
 ### Praktické ukázky a projekty
 

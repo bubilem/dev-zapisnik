@@ -4,7 +4,30 @@ Tvorba webových stránek není jen o psaní kódu v editoru. Vývojáři ke sv�
 
 Zde je přehled nejdůležitějších nástrojů a služeb, které by měl znát každý webdeveloper.
 
-## 1. Nástroje přímo v prohlížeči
+## 1. Vývojová prostředí a editory kódu (IDE)
+
+Základním nástrojem každého vývojáře je kvalitní editor kódu, ve kterém tráví nejvíce času.
+
+### Visual Studio Code (VS Code)
+- Nejpoužívanější a nejoblíbenější editor kódu současnosti (od Microsoftu).
+- Je zdarma, rychlý a extrémně rozšiřitelný díky tisícům doplňků (extensions).
+- Nabízí vestavěný terminál, výbornou správu verzí (Git) a inteligentní napovídání kódu (IntelliSense).
+
+### Antigravity
+- Pokročilý AI asistent a agentní systém od Google DeepMind, navržený pro efektivní pair programming.
+- Dokáže samostatně analyzovat kontext projektu, navrhovat architekturu, psát kód a upravovat soubory přímo ve vývojovém prostředí.
+
+## 2. AI nástroje pro vývoj webu
+
+Umělá inteligence dnes radikálně zrychluje a usnadňuje vývoj webových stránek.
+
+### GitHub Copilot / Cursor
+- Nástroje integrované přímo do editoru kódu. Automaticky doplňují celé řádky i rozsáhlé bloky kódu na základě kontextu vaší práce.
+
+### ChatGPT / Claude
+- Výkonné jazykové modely (LLM), které slouží jako zkušení mentoři. Mohou vám pomoci vyřešit programátorský zásek, vygenerovat kostru kódu nebo vysvětlit složité koncepty.
+
+## 3. Nástroje přímo v prohlížeči
 
 Moderní webové prohlížeče obsahují výkonné vývojářské nástroje (DevTools), které jsou absolutním základem pro práci s webem.
 
@@ -20,7 +43,7 @@ Moderní webové prohlížeče obsahují výkonné vývojářské nástroje (Dev
 - **Kde najít:** Zabudováno v Chrome DevTools (záložka Lighthouse).
 - **K čemu slouží:** Automatizovaný nástroj, který ohodnotí vaši stránku ve čtyřech kategoriích: Výkon (Performance), Přístupnost (Accessibility), Osvědčené postupy (Best Practices) a SEO. Vygeneruje podrobný report s konkrétními radami, co a jak zlepšit.
 
-## 2. Generátory a pomocníci
+## 4. Generátory a pomocníci
 
 Proč psát složitý kód ručně, když existují nástroje, které to udělají za vás nebo vám práci výrazně usnadní?
 
@@ -38,7 +61,7 @@ Složité CSS vlastnosti se špatně píší z hlavy.
 - **Box-shadow CSS Generator:** Pro snadné naklikání stínů prvků.
 - **CSS Grid Generator:** Vizuální nástroj pro návrh rozložení pomocí CSS Gridu.
 
-## 3. Barvy a design
+## 5. Barvy a design
 
 Při návrhu webu potřebujete ladící barvy, dobrý kontrast a kvalitní ikony.
 
@@ -54,7 +77,7 @@ Při návrhu webu potřebujete ladící barvy, dobrý kontrast a kvalitní ikony
 - **FontAwesome:** Známá knihovna ikon, nabízí bezplatnou i placenou verzi.
 - **Unsplash / Pexels:** Fotobanky s vysoce kvalitními fotografiemi zdarma pro komerční i nekomerční použití.
 
-## 4. Analytika a měření webu
+## 6. Analytika a měření webu
 
 Když web běží, je důležité vědět, kdo na něj chodí a jak si vede ve vyhledávačích.
 
@@ -67,7 +90,7 @@ Když web běží, je důležité vědět, kdo na něj chodí a jak si vede ve v
 ### PageSpeed Insights
 - Samostatný webový nástroj od Googlu (fungující na podobném základu jako Lighthouse). Změří rychlost vašeho webu a ukáže výsledky reálných uživatelů (Core Web Vitals).
 
-## 5. Validace kódu
+## 7. Validace kódu
 
 Je váš kód správně napsaný a neobsahuje překlepy?
 
